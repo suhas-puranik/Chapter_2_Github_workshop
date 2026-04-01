@@ -4,6 +4,18 @@ format: html
 editor: visual
 ---
 
+```{r}
+
+```
+
+```{r}
+
+```
+
+```{r}
+
+```
+
 ## Quarto
 
 Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
@@ -13,7 +25,11 @@ Quarto enables you to weave together content and executable code into a finished
 When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
 
 ```{r}
-1 + 1
+library(config)
+config::get()
+db_credentials <- config::get('database1')
+uid <- db_credentials$uid # username
+pwd <- db_credentials$pw # password
 ```
 
 You can add options to executable code like this
